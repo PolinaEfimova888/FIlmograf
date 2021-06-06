@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "889008813217",
+    "project_id": "favotitefilmsapplication",
+    "storage_bucket": "favotitefilmsapplication.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:889008813217:android:ee7c5d74fb72e0c18d2ce0",
+        "android_client_info": {
+          "package_name": "com.example.filmograf"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "889008813217-ne73j7akgsht83nkpn43f0qkgr5dbpak.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAgOGusg6rSCgA9apC0yeer8ukvW7tA9C8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "889008813217-ne73j7akgsht83nkpn43f0qkgr5dbpak.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

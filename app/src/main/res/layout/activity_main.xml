@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    style="@style/loginParent"
+    tools:context=".MainActivity"
+    android:id="@+id/main_lin"
+    android:fitsSystemWindows="true">
+
+    <ScrollView
+        style="@style/parent">
+
+        <RelativeLayout
+            style="@style/parent">
+
+    <LinearLayout
+        style="@style/linearParent"
+        android:layout_gravity="center"
+        android:padding="@dimen/loginViewsMargin">
+
+    <TextView
+        style="@style/headerTextPrimary"
+        android:text="Login"
+        android:layout_marginTop="@dimen/loginViewsMargin"/>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="textInputEmail"
+        style="@style/parent"
+        android:layout_marginTop="@dimen/loginViewsMargin">
+        <EditText
+            android:id="@+id/mail"
+            style="@style/modifiedEditText"
+            android:inputType="textEmailAddress"
+            android:maxLines="1"
+            android:hint="@string/login_email_hint"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/textInputPassword"
+        style="@style/parent"
+        android:layout_marginTop="@dimen/loginViewsMargin">
+        <EditText
+            android:id="@+id/pass"
+            style="@style/modifiedEditText"
+            android:hint="@string/login_password_hint"
+            android:maxLines="1"
+            android:inputType="textPassword"/>
+    </android.support.design.widget.TextInputLayout>
+
+<!--   <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal">-->
+
+<!--        <EditText-->
+<!--            android:id="@+id/mail"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginRight="10sp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:inputType="textEmailAddress|textNoSuggestions"/>-->
+<!--        <EditText-->
+<!--            android:id="@+id/pass"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginRight="10sp"-->
+<!--            android:layout_weight="1"/>-->
+
+<!--    </LinearLayout>-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:onClick="onSignIn"
+            android:id="@+id/login"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="Login with mail"
+            android:layout_marginRight="10sp" />
+
+        <Button
+            android:onClick="onRegister"
+            android:id="@+id/register"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="Register with mail"
+            android:layout_marginRight="10sp" />
+
+    </LinearLayout>
+
+    <Button
+        android:onClick="googleSignIn"
+        android:id="@+id/googleauth"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Login with Google"
+        />
+
+</LinearLayout>

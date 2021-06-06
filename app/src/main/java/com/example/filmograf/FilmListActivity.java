@@ -20,7 +20,6 @@ public class FilmListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_film_list);
 
-
     }
 
     public Call<Response> getSearch(String[] parametres) {

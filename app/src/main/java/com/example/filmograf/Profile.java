@@ -5,12 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 
-import androidx.appcompat.app.AppCompatActivity;
-
-
 import android.content.Intent;
-import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -42,6 +37,8 @@ public class Profile extends AppCompatActivity {
             name.setText(signInAccount.getDisplayName());
             mail.setText(signInAccount.getEmail());
         }
+        Intent intent = new Intent(Profile.this, PopularMovieListActivity.class);
+        startActivity(intent);
 
     }
 
@@ -51,4 +48,10 @@ public class Profile extends AppCompatActivity {
         Intent intent = new Intent(Profile.this,MainActivity.class);
         startActivity(intent);
     }
+
+    public void goToList(View v) {
+        Intent intent = new Intent(Profile.this, PopularMovieListActivity.class);
+        startActivity(intent);
+    }
+
 }

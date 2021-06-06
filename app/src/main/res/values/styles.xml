@@ -12,6 +12,10 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
     </style>
+    <style name="parent2">
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+    </style>
 
     <style name="loginParent" parent="parent">
         <item name="android:layout_height">match_parent</item>

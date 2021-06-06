@@ -46,7 +46,7 @@
             <TextView
                 style="@style/headerText"
                 android:layout_gravity="center"
-                android:text="FILMOGRAPHY"
+                android:text="FILMOGRAPHY!"
                 android:layout_marginTop="60dp"/>
             <TextView
                 style="@style/headerText_log"
@@ -168,6 +168,15 @@
 
         </LinearLayout>
     </LinearLayout>
+
         </RelativeLayout>
+
     </ScrollView>
+<!--    <ImageView-->
+<!--        android:layout_gravity="center_horizontal"-->
+<!--        android:layout_marginTop="80dp"-->
+<!--        android:layout_width="60dp"-->
+<!--        android:layout_height="80dp"-->
+<!--        android:background="@drawable/ic_freepik__film__inject_12"-->
+<!--        />-->
 </LinearLayout>

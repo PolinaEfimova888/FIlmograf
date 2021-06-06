@@ -40,7 +40,7 @@
             <TextView
                 style="@style/headerText"
                 android:layout_gravity="center"
-                android:text="Hello in"
+                android:text="Welcome to"
                 android:layout_marginTop="30dp"/>
 
             <TextView

@@ -90,4 +90,9 @@
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">@dimen/or</item>
     </style>
+    <style name="text_header2" parent="viewParent">
+        <item name="android:textColor">@color/blue</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/newsMoreTextSize</item>
+    </style>
 </resources>

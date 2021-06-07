@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
+    android:id="@+id/scroll"
+    tools:context=".Profile"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:id="@+id/main_lin"
-    android:fitsSystemWindows="true">
+    android:layout_height="match_parent">
 
-    <ScrollView
-        style="@style/parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/profile_lin">
+
 
         <RelativeLayout
             style="@style/parent">
@@ -90,18 +91,22 @@
 
                         <Button
                             android:id="@+id/fav_movies_butt"
-                            android:onClick="showFavMovies"
                             style="@style/loginButton2"
+                            android:layout_width="124dp"
                             android:layout_gravity="center_horizontal"
                             android:layout_marginTop="@dimen/loginViewsMargin"
+                            android:layout_marginRight="5dp"
+                            android:onClick="showFavMovies"
                             android:text="Favorites" />
 
                         <Button
                             android:id="@+id/wait_movies_butt"
-                            android:onClick="showWaitMovies"
                             style="@style/loginButton2"
+                            android:layout_width="100dp"
                             android:layout_gravity="center_horizontal"
                             android:layout_marginTop="@dimen/loginViewsMargin"
+                            android:layout_marginRight="5dp"
+                            android:onClick="showWaitMovies"
                             android:text="List" />
 
                         <Button
@@ -119,23 +124,14 @@
         </RelativeLayout>
 
 
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/profile_listview"
+                android:textSize="18sp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/my_custom_background"/>
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/profile_lin">
+        </LinearLayout>
 
-
-        <ListView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/profile_listview"
-            android:textSize="18sp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/my_custom_background"/>
-
-    </LinearLayout>
-
-</ScrollView>
-</LinearLayout>
+    </ScrollView>

@@ -181,12 +181,18 @@
             </LinearLayout>
         </RelativeLayout>
 
+
     </ScrollView>
-<!--    <ImageView-->
-<!--        android:layout_gravity="center_horizontal"-->
-<!--        android:layout_marginTop="80dp"-->
-<!--        android:layout_width="60dp"-->
-<!--        android:layout_height="80dp"-->
-<!--        android:background="@drawable/ic_freepik__film__inject_12"-->
-<!--        />-->
+    <ImageView
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:layout_width="60dp"
+        android:layout_height="90dp"
+        android:background="@drawable/ic_freepik__popcorns__inject_15"
+        />
+
+    <TextView
+        style="@style/Or"
+        android:layout_marginTop="20dp"
+        android:text="need to register for further use" />
 </LinearLayout>

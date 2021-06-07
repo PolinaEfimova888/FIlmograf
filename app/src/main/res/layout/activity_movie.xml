@@ -20,6 +20,7 @@
     <Button
         android:onClick="gotoProfile"
         android:id="@+id/go_to_mylist"
+        style="@style/loginButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="go To My List"
@@ -27,6 +28,8 @@
 
     <Button
         android:id="@+id/go_to_mylist"
+        style="@style/loginButton"
+        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="LoginGoogle"

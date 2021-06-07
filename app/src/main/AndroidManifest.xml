@@ -11,6 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        android:networkSecurityConfig="@xml/security_config"
         <activity android:name=".MovieActivity"></activity>
         <activity android:name=".AllMovieActivity" />
         <activity android:name=".PopularMovieListActivity"></activity>

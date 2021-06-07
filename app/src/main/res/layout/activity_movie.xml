@@ -18,6 +18,14 @@
     </LinearLayout>
 
     <Button
+        android:onClick="gotoProfile"
+        android:id="@+id/go_to_mylist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="go To My List"
+        />
+
+    <Button
         android:id="@+id/go_to_mylist"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

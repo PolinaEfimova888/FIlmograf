@@ -85,7 +85,17 @@
                     style="@style/text_header2"
                     android:drawableLeft="@drawable/ic_star"
                     />
+                <TextView
+                    android:layout_width="90dp"
+                    android:layout_height="20dp"
+                    android:background="@color/primaryTextColor"
+                    android:id="@+id/id"
+                    android:text="title"
+                    android:onClick="goToFilm"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="#00000000"/>
             </LinearLayout>
+
         </LinearLayout>
 
         <TextView

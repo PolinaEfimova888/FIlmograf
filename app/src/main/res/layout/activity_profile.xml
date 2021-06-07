@@ -1,47 +1,141 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Profile">
+    tools:context=".MainActivity"
+    android:id="@+id/main_lin"
+    android:fitsSystemWindows="true">
 
-    <Button
-        android:id="@+id/logout"
-        android:onClick="logOut"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Logout"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <ScrollView
+        style="@style/parent">
+
+        <RelativeLayout
+            style="@style/parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:weightSum="12">
+
+                <LinearLayout
+                    style="@style/parent"
+                    android:background="@drawable/header"
+                    android:orientation="vertical"
+                    android:layout_weight="3">
+
+                    <ImageView
+                        style="@style/parent"
+                        android:background="@drawable/ic_login_bk"
+                        android:contentDescription="login background"
+                        />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/name"
+                style="@style/headerText"
+                android:layout_gravity="center"
+                android:text="Name"
+                android:layout_marginTop="30dp"/>
 
 
-    <TextView
-        android:id="@+id/name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="97dp"
-        android:text="TextView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/mail"
+                style="@style/headerText"
+                android:layout_gravity="center"
+                android:text="mail"
+                android:layout_marginTop="60dp"/>
+
+            <LinearLayout
+
+                android:layout_width="395dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="140dp"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/login_back">
 
 
-    <TextView
-        android:id="@+id/mail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:text="TextView"
-        app:layout_constraintStart_toStartOf="@+id/name"
-        app:layout_constraintTop_toBottomOf="@+id/name" />
+                <LinearLayout
+                    style="@style/linearParent">
 
-    <Button
-        android:id="@+id/goToList"
-        android:onClick="goToList"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="go To List" />
+                    <Button
+                        android:id="@+id/logout"
+                        android:onClick="logOut"
+                        style="@style/headerText_log"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:background="#fff"
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+                        android:text="Logout"/>
+
+                    <Button
+                        android:id="@+id/goToList"
+                        android:onClick="goToList"
+                        style="@style/loginButton"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/loginViewsMargin"
+                        android:text="go To List" />
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/fav_movies_butt"
+                            android:onClick="showFavMovies"
+                            style="@style/loginButton2"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="@dimen/loginViewsMargin"
+                            android:text="Favorites" />
+
+                        <Button
+                            android:id="@+id/wait_movies_butt"
+                            android:onClick="showWaitMovies"
+                            style="@style/loginButton2"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="@dimen/loginViewsMargin"
+                            android:text="List" />
+
+                        <Button
+                            android:id="@+id/watch_movies_butt"
+                            android:onClick="showWatchMovies"
+                            style="@style/loginButton2"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="@dimen/loginViewsMargin"
+                            android:text="Watched" />
+
+
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/profile_lin">
+
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/profile_listview"
+            android:textSize="18sp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/my_custom_background"/>
+
+    </LinearLayout>
+
+</ScrollView>
+</LinearLayout>

@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10sp"
             android:text="Популярные фильмы"
-            android:textSize="18sp"
+            android:textSize="22sp"
             style="@style/headerText_title"/>
 
         <ListView

@@ -19,7 +19,7 @@
             android:layout_margin="10sp"
             android:text="Все фильмы"
             style="@style/headerText_title"
-            android:textSize="18sp"/>
+            android:textSize="22sp"/>
 
         <ListView
             android:layout_width="match_parent"

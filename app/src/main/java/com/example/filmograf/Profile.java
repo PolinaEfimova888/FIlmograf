@@ -18,10 +18,8 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class Profile extends AppCompatActivity {
 
-
     TextView name, mail;
     Button logout;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +35,7 @@ public class Profile extends AppCompatActivity {
             name.setText(signInAccount.getDisplayName());
             mail.setText(signInAccount.getEmail());
         }
-        Intent intent = new Intent(Profile.this, PopularMovieListActivity.class);
+        Intent intent = new Intent(Profile.this, MovieActivity.class);
         startActivity(intent);
 
     }

@@ -11,22 +11,22 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".MainActivity"
-        android:id="@+id/all_movies">
+        android:id="@+id/all_movies_lin">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10sp"
-            android:text="Популярные фильмы"
-            android:textSize="18sp"
-            style="@style/headerText_title"/>
+            android:text="Все фильмы"
+            style="@style/headerText_title"
+            android:textSize="18sp"/>
 
         <ListView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/my_custom_background"
+            android:layout_height="match_parent"
             android:id="@+id/listview"
-            android:textSize="18sp"/>
+            android:textSize="18sp"
+            android:background="@drawable/my_custom_background"/>
 
     </LinearLayout>
 

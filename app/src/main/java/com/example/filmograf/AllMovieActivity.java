@@ -3,6 +3,7 @@ package com.example.filmograf;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -15,12 +16,15 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.squareup.picasso.Picasso;
 
+import java.io.IOException;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class PopularMovieListActivity extends AppCompatActivity {
+public class AllMovieActivity extends AppCompatActivity {
+
 
     LinearLayout ln;
 
@@ -30,20 +34,21 @@ public class PopularMovieListActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_popular_movie_list);
+        setContentView(R.layout.activity_all_movie);
 
-        ln = (LinearLayout) findViewById(R.id.all_movies);
+        ln = (LinearLayout) findViewById(R.id.all_movies_lin);
 
         String api_key = "2afab14a5f39728f8f613d627e5dd9bb";
 
-        Call<Movies> getFilmCall = getFilmSearch("1");
-        //api.search(q, app_id, app_key);
+        //new getImagesTask().execute();
+
+        Call<Movies> getFilmCall = getFilmsCall();
 
         Callback<Movies> filmcallback = new Callback<Movies>() {
             @Override
             public void onResponse(Call<Movies> call, retrofit2.Response<Movies> response) {
 
-                // Log.d("mytag","response.raw().request().url();"+response.raw().request().url());
+                //Log.d("mytag","response.raw().request().url();"+response.raw().request().url());
                 Movies movies = response.body();
 
                 if (movies!=null) {
@@ -64,24 +69,24 @@ public class PopularMovieListActivity extends AppCompatActivity {
 
     }
 
-    public Call<Movies> getFilmSearch (String film) {
+    public Call<Movies> getFilmsCall () {
         String url = "https://api.themoviedb.org/";
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(url)
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
-
+        //1043758
         Manager api = retrofit.create(Manager.class);
 
-        Call <Movies> call_film = api.getPopular(api_key, "ru", 1);
+        Call <Movies> call_film = api.getAll(api_key, "ru", "popularity.desc");
         return call_film;
     }
 
-    public void setPopularFilms(Movies movies){
+    public void setPopularFilms(Movies movies) {
         LayoutInflater ltInflater = getLayoutInflater();
 
-        for (Movie m: movies.results) {
+        for (Movie m : movies.results) {
             String url = "https://www.themoviedb.org/t/p/w1280/";
             View new_movie = ltInflater.inflate(R.layout.popular_movie, ln, false);
 
@@ -93,20 +98,20 @@ public class PopularMovieListActivity extends AppCompatActivity {
 
             ImageView poster = new_movie.findViewById(R.id.poster);
 
-            title.setText("Название: "+ m.title);
-            original_title.setText("Полное Название: "+ m.original_title);
-            release_date.setText("Дата релиза: "+ m.release_date);
-            overview.setText("Описание: "+ m.overview);
-            popularity.setText("Популярность: "+ String.valueOf(m.popularity));
+            title.setText("Название: " + m.title);
+            original_title.setText("Полное Название: " + m.original_title);
+            release_date.setText("Дата релиза: " + m.release_date);
+            overview.setText("Описание: " + m.overview);
+            popularity.setText("Популярность: " + String.valueOf(m.popularity));
 
             if (m.backdrop_path != null) {
-                Uri uri_pic = Uri.parse(url+m.backdrop_path);
+                Uri uri_pic = Uri.parse(url + m.backdrop_path);
                 Picasso p = new Picasso.Builder(getApplicationContext()).build();
                 p.load(uri_pic).into(poster);
             }
 
             if (m.poster_path != null) {
-                Uri uri_pic = Uri.parse(url+m.poster_path);
+                Uri uri_pic = Uri.parse(url + m.poster_path);
                 Picasso p = new Picasso.Builder(getApplicationContext()).build();
                 p.load(uri_pic).into(poster);
             }
@@ -115,4 +120,31 @@ public class PopularMovieListActivity extends AppCompatActivity {
         }
 
     }
+
+
+    public class getImagesTask extends AsyncTask<Void , Void, Movies> {
+
+        @Override
+        protected Movies doInBackground(Void... voids) {
+            Call<Movies> getFilmCall = getFilmsCall();
+            return getImageTask(getFilmCall);
+        }
+
+        @Override
+        protected void onPostExecute(Movies result) {
+            setPopularFilms(result);
+        }
+
+        private Movies getImageTask(Call<Movies> getFilmCall) {
+            try {
+                retrofit2.Response<Movies> response =  getFilmCall.execute();
+                return response.body();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
+    }
+
+
 }

@@ -37,6 +37,12 @@
         <item name="android:textStyle">bold</item>
     </style>
 
+    <style name="headerText_title" parent="parent">
+        <item name="android:textSize">@dimen/loginCardRadius</item>
+        <item name="android:textColor">@color/primaryTextColor</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
     <style name="Or" parent="parent">
         <item name="android:textSize">@dimen/or</item>
         <item name="android:textAlignment">center</item>
@@ -77,5 +83,11 @@
         <item name="android:textColor">@color/blue</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">@dimen/newsMoreTextSize</item>
+    </style>
+
+    <style name="text_header" parent="viewParent">
+        <item name="android:textColor">@color/blue</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/or</item>
     </style>
 </resources>

@@ -1,5 +1,4 @@
 package com.example.filmograf;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -50,23 +49,6 @@ public class MainActivity extends AppCompatActivity {
         googleAuthentification ();
 
         FirebaseUser user =  mAuth.getCurrentUser();
-
-//        mAuthListener = new FirebaseAuth.AuthStateListener() {
-//            @Override
-//            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-//                FirebaseUser user = firebaseAuth.getCurrentUser();
-//                if (user != null) {
-//                    Log.d("mytag", "User is signed in");
-//                    // User is signed in
-//
-//                } else {
-//                    Log.d("mytag", "User is signed out");
-//                    // User is signed out
-//
-//                }
-//
-//            }
-//        };
     }
 
     public boolean userEnterData() {

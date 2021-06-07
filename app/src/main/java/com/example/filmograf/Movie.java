@@ -9,4 +9,10 @@ public class Movie {
     String backdrop_path = null;
     String release_date;
     double popularity;
+    Genre[] genres = null;
+
+    public class Genre {
+        int id;
+        String name;
+    }
 }

@@ -194,5 +194,5 @@
     <TextView
         style="@style/Or"
         android:layout_marginTop="20dp"
-        android:text="need to register for further use" />
+        android:text="need to log in for further use" />
 </LinearLayout>

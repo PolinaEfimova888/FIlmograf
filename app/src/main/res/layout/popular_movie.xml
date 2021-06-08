@@ -108,4 +108,5 @@
         android:id="@+id/overview"
         android:layout_marginTop="10dp"/>
 </LinearLayout>
+    </LinearLayout>
 </LinearLayout>
